@@ -14,7 +14,6 @@
     <ItemGroup>
       <Folder Include="Controllers\" />
       <Folder Include="Data\pdf\" />
-      <Folder Include="Services\" />
       <Folder Include="wwwroot\" />
     </ItemGroup>
 
