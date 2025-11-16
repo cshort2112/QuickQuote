@@ -12,9 +12,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Config\Users\" />
       <Folder Include="Controllers\" />
       <Folder Include="Data\pdf\" />
       <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\QuickQuote.Shared\QuickQuote.Shared.csproj" />
     </ItemGroup>
 
 </Project>

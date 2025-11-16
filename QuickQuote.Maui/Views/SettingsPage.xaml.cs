@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickQuote.Maui.Views;
 
-public partial class MainPage : ContentPage
+public partial class SettingsPage : ContentPage
 {
-    public MainPage()
+    public SettingsPage()
     {
         InitializeComponent();
-    }
-
-    private void OnButtonClick (object sender, EventArgs e)
-    {
-        Test.Text = "You Clicked Me!";
     }
 }

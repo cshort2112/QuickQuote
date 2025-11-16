@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuickQuote.Maui.Views.LoginPage">
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <Label
+                Text="Please Login"></Label>
+            <Entry
+                x:Name="Username"
+                Text="Username"></Entry>
+            <Entry
+                x:Name="Password"
+                Text="Password"></Entry>
+            <Label
+                x:Name="ErrorMessage"
+                Text=""
+                BackgroundColor="Transparent"
+                TextColor="Transparent"></Label>
+            <Button
+                x:Name="SubmitButton"
+                Text="Submit"
+                BackgroundColor="Blue"
+                TextColor="White"
+                Clicked="Submit"></Button>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

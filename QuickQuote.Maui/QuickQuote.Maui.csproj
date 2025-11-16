@@ -67,4 +67,8 @@
       <Folder Include="Models\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\QuickQuote.Shared\QuickQuote.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

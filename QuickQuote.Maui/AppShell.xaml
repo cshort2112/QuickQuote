@@ -9,8 +9,27 @@
     Title="QuickQuote.Maui">
 
     <ShellContent
-        Title="Home"
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
+    
+    <ShellContent
+        Title="Main Menu"
         ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"></ShellContent>
+    
+    <ShellContent
+        Title="Quote Form"
+        ContentTemplate="{DataTemplate views:QuoteForm}"
+        Route="QuoteForm"></ShellContent>
+    
+    <ShellContent
+        Title="Quote Result"
+        ContentTemplate="{DataTemplate views:QuoteResults}"
+        Route="QuoteResult"></ShellContent>
 
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate views:SettingsPage}"
+        Route="Settings"></ShellContent>
 </Shell>
