@@ -15,18 +15,13 @@ var app = builder.Build();
 //     app.UseSwagger();
 //     app.UseSwaggerUI();
 // }
-
-// if (!app.Environment.IsDevelopment())
-// {
-//     app.UseHttpsRedirection();
-// }
-
+app.UseHttpsRedirection();
 
 
 app.MapPost("/api/auth/login", async (LoginRequest request) =>
 {
-    string username = request.Username;
-    string password = request.Password;
+    string? username = request.Username;
+    string? password = request.Password;
 
     if (username == "admin" && password == "123987")
     {
@@ -38,4 +33,4 @@ app.MapPost("/api/auth/login", async (LoginRequest request) =>
 
 app.Run();
 
-record LoginRequest(string Username, string Password);
+record LoginRequest(string? Username, string? Password);
