@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <VerticalStackLayout>
             <Label
-                Text="Hello pimps... heheh how fun."></Label>
+                Text="Main Menu."></Label>
         
             <Button
                 x:Name="Test"
