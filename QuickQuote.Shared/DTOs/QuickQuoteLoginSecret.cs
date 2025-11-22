@@ -6,4 +6,5 @@ public class QuickQuoteLoginSecret
     public string PasswordHash { get; init; } = default!;
     public string Salt { get; init; } = default!;
     public int Iterations { get; init; }
+    
 }

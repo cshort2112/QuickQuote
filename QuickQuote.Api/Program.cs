@@ -20,7 +20,6 @@ var app = builder.Build();
 //     app.UseSwaggerUI();
 // }
 app.UseHttpsRedirection();
-
 //will be replacing this with a key vault, and a true JWT.. for now we are just going to go with the key vault.
 //I installed hashicorp keyvault on my local machine, and added the secrets to it.
 //I also created a plist launch daemon to run the key vault on startup.
@@ -43,12 +42,12 @@ app.MapPost("/api/auth/login", async (LoginRequest request, IVaultService vaultS
     
     string passwordHash = loginSecret.PasswordHash;
     string salt = loginSecret.Salt;
-    string iterations = loginSecret.Iterations.ToString();
+    int iterations = loginSecret.Iterations;
     string username = request.Username;
     string password = request.Password;
 
 
-    if (PasswordVerifier.VerifyPassword(password, passwordHash, salt, int.Parse(iterations)))
+    if (PasswordVerifier.VerifyPassword(password, passwordHash, salt, iterations))
     {
         string token = "token";
         return Results.Ok(new LoginResult(token, DateTime.Now.AddDays(1)));

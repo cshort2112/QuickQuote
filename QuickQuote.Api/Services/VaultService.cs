@@ -47,7 +47,7 @@ public class VaultService : IVaultService
         //   "username": "...",
         //   "passwordHash": "...",
         //   "salt": "...",
-        //   "iterations": 100000
+        //   "iterations": "100000"
         //  },
         //  "metadata": { ... }
         // }
@@ -55,13 +55,16 @@ public class VaultService : IVaultService
         using var doc = await JsonDocument.ParseAsync(contentStream, cancellationToken: cancellationToken);
 
         var dataRoot = doc.RootElement.GetProperty("data").GetProperty("data");
+        
+        
 
+        //Turns out, iterations is a string, not an int.
         var secret = new QuickQuoteLoginSecret
         {
             Username = dataRoot.GetProperty("username").GetString() ?? "",
             PasswordHash = dataRoot.GetProperty("passwordHash").GetString() ?? "",
             Salt = dataRoot.GetProperty("salt").GetString() ?? "",
-            Iterations = dataRoot.GetProperty("iterations").GetInt32()
+            Iterations = int.Parse(dataRoot.GetProperty("iterations").GetString() ?? "0")
         };
         
         return secret;
